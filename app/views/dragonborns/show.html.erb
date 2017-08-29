@@ -1,0 +1,7 @@
+<h1><%= @selected_dragonborn.name %></h1>
+
+<ol>
+  <% @quests.each do |quest| %>
+    <li><%= quest.task %> (Given by: <%= quest.quest_giver %>)</li>
+  <% end %>
+</ol>

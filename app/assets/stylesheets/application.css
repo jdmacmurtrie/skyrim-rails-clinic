@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+html body {
+  padding: 10%;
+  background: url(https://orig02.deviantart.net/8a80/f/2012/086/0/4/skyrim_logo_png_by_drakonias115-d4u586r.png)no-repeat top right;
+  background-color: #386472;
+}
+
+h1 {
+  color: #A4C6C9;
+}
+
+input {
+  background-color: #636363;
+}
+
+li {
+  color: white;
+  font-size: 35px;
+}
+
+a {
+  color: white
+}
