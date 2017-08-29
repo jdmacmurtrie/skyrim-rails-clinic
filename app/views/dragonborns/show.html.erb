@@ -3,5 +3,17 @@
 <ol>
   <% @quests.each do |quest| %>
     <li><%= quest.task %> (Given by: <%= quest.quest_giver %>)</li>
+    <%= button_to 'Remove Quest', dragonborn_quest_path(@selected_dragonborn, quest), method: :delete %>
   <% end %>
 </ol>
+
+
+<%= form_for [@selected_dragonborn, @quest] do |f| %>
+  <%= f.label :quest_giver %>
+  <%= f.text_field :quest_giver %>
+
+  <%= f.label :task %>
+  <%= f.text_field :task %>
+
+  <%= f.submit "Accept" %>
+<% end %>
