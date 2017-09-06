@@ -1,0 +1,11 @@
+<h1><%= @city.name %></h1>
+
+<h2>Allegiance: <%= @city.allegiance %></h2>
+<h2>Region: <%= @city.region %></h2>
+
+<h2>Quests involving this city:</h2>
+<ul>
+  <% @quests.each do |quest| %>
+    <li><%= quest.task %> (assigned to <%= quest.dragonborn.name %>)</li>
+  <% end %>
+</ul>

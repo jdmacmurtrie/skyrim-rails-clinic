@@ -3,6 +3,10 @@
 <ol>
   <% @quests.each do |quest| %>
     <li><%= quest.task %> (Given by: <%= quest.quest_giver %>)</li>
+      Cities involved:
+      <% quest.cities.each do |city| %>
+        <p><%= link_to city.name, city_path(city) %></p>
+      <% end %>
     <%= button_to 'Remove Quest', dragonborn_quest_path(@selected_dragonborn, quest), method: :delete %>
   <% end %>
 </ol>

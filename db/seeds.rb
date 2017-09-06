@@ -7,13 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Dragonborn.destroy_all
 Quest.destroy_all
+City.destroy_all
 
 Dragonborn.create(
   [
-    {name: 'Bugdulg Logob', gender: 'Male', race: 'Orc'},
-    {name: 'Fillim', gender: 'Female', race: 'Wood Elf'},
+    { name: 'Bugdulg Logob', gender: 'Male', race: 'Orc' },
+    { name: 'Fillim', gender: 'Female', race: 'Wood Elf' },
   ]
 )
+
 Quest.create(
   [
     {
@@ -26,5 +28,20 @@ Quest.create(
       task: 'Retrieve the Rueful Axe',
       dragonborn: Dragonborn.find_by(name: 'Bugdulg Logob')
     }
+  ]
+)
+
+City.create(
+  [
+    { name: 'Solitude', allegiance: 'Imperials', region: 'Haafingar' },
+    { name: 'Markarth', allegiance: 'Stormcloaks', region: 'The Reach' },
+    { name: 'Whiterun', allegiance: 'Imperials', region: 'Whiterun Hold' }
+  ]
+)
+
+CityQuest.create(
+  [
+    { city: City.find_by(name: 'Whiterun'), quest: Quest.find_by(quest_giver: 'The Greybeards')},
+    { city: City.find_by(name: 'Markarth'), quest: Quest.find_by(quest_giver: 'Clavicus Vile')}
   ]
 )

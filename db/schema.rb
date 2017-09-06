@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829172451) do
+ActiveRecord::Schema.define(version: 20170905181452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name",       null: false
+    t.string "allegiance"
+    t.string "region"
+  end
+
+  create_table "city_quests", force: :cascade do |t|
+    t.integer "city_id"
+    t.integer "quest_id"
+    t.index ["city_id"], name: "index_city_quests_on_city_id", using: :btree
+    t.index ["quest_id"], name: "index_city_quests_on_quest_id", using: :btree
+  end
 
   create_table "dragonborns", force: :cascade do |t|
     t.string "name",   null: false
