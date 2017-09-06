@@ -2,6 +2,7 @@
 <ul>
   <% @dragonborn.each do |db| %>
     <li><%= link_to "#{db.name}  [#{db.race} - #{db.gender}]", dragonborn_path(db) %></li>
+    <p>(<%= db.quests.count %> quests)</p>
   <% end %>
 </ul>
 <br>

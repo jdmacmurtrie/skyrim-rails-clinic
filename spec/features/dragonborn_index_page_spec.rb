@@ -7,6 +7,8 @@ feature 'user navigates to dragonborn index page' do
     visit '/'
 
     expect(page).to have_link dragonborn.name
+    expect(dragonborn.quests.count).to eq 2
+    expect(page).to have_content dragonborn.quests.count
     expect(page).to have_link 'Start a New Game'
   end
 
