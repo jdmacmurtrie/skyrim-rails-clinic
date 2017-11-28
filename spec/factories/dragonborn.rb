@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :dragonborn do
     sequence(:name) { |n| "John#{n}" } 
     gender  "Male"

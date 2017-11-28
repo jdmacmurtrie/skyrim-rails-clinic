@@ -1,7 +1,7 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :quest do
-    quest_giver "John"
-    task  "Rule the world"
+    quest_giver "Ysolda"
+    task  "Retrieve a mammoth tusk"
     dragonborn
   end
 end
