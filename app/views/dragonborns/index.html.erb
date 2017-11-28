@@ -1,9 +1,9 @@
 <h1>Choose your Dragonborn</h1>
 <ul>
   <% @dragonborn.each do |db| %>
-    <li><%= link_to "#{db.name}  [#{db.race} - #{db.gender}]", dragonborn_path(db) %></li>
+    <li><%= "#{db.name}  [#{db.race} - #{db.gender}]" %></li>
   <% end %>
 </ul>
 <br>
 <h2>OR</h2>
-<%= link_to 'Start a New Game', new_dragonborn_path %>
+<%= 'Start a New Game' %>
