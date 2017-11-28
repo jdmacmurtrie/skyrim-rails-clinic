@@ -10,7 +10,7 @@
 
   <body>
     <% flash.each do |key, value| %>
-      <%= value %>
+      <p><strong><%= value %></strong></p>
     <% end %>
     <%= yield %>
   </body>

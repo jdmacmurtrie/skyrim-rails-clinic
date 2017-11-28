@@ -7,8 +7,9 @@ feature 'user navigates to show page' do
   scenario 'user sees all quests' do
     visit "/dragonborns/#{dragonborn.id}"
 
-    expect(page).to have_content quest1.task
-    expect(page).to have_content quest2.task
-    
+    expect(page).to have_content quest.first.task
+    expect(page).to have_content quest.last.task
+
+
   end
 end

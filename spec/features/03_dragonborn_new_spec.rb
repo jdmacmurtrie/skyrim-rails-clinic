@@ -12,19 +12,18 @@ feature 'user starts new game' do
     fill_in 'Gender', with: 'Female'
     click_button 'Begin!'
 
-    expect(page.curent_path).to eq('/')
+    expect(page.current_path).to eq('/dragonborns')
     expect(page).to have_content 'Anaril [High Elf - Female]'
     expect(page).to have_content 'A new Dragonborn has appeared.'
   end
 
   scenario 'user fudges up form' do
-    fill_in 'Name', with: 'Anaril'
-    fill_in 'Race', with: 'High Elf'
+    visit '/dragonborns/new'
+
+    # fill_in 'Name', with: 'Anaril'
+    # fill_in 'Race', with: 'High Elf'
 
     click_button 'Begin!'
-    expect(page.curent_path).to eq(new_dragonborn_path)
-    expect(page).to have_content 'Anaril'
-    expect(page).to have_content 'High Elf'
     expect(page).to_not have_content 'A new Dragonborn has appeared.'
     expect(page).to have_content "can't be blank"
   end
