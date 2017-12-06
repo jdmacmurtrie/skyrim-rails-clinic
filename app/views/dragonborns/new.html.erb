@@ -1,13 +1,16 @@
+<h1>Create a New Character</h1>
+
 <%= form_for(@dragonborn) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :race %>
-  <%= f.text_field :race %>
+    <%= f.label :race %>
+    <%= f.text_field :race %>
 
-  <%= f.label :gender %>
-  <%= f.text_field :gender %>
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
 
-  <%= f.submit %>
-
+    <%= f.submit 'Begin!' %>
+  </fieldset>
 <% end %>

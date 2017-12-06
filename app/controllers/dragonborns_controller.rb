@@ -1,5 +1,4 @@
 class DragonbornsController < ApplicationController
-
   def index
     @dragonborn = Dragonborn.all
   end
@@ -15,13 +14,13 @@ class DragonbornsController < ApplicationController
   end
 
   def create
-    @dragonborn = Dragonborn.create(dragonborn_params)
+    @dragonborn = Dragonborn.new(dragonborn_params)
     if @dragonborn.save
-      redirect_to @dragonborn
-      flash[:notice] = "A new Dragonborn has appeared."
+      redirect_to dragonborns_path
+      flash[:notice] = 'A new Dragonborn has appeared.'
     else
+      flash.now[:alert] = @dragonborn.errors.full_messages.join(', ')
       render :new
-      flash[:notice] = @dragonborn.errors.full_messages.join(',')
     end
   end
 
@@ -30,5 +29,4 @@ class DragonbornsController < ApplicationController
   def dragonborn_params
     params.require(:dragonborn).permit(:name, :race, :gender)
   end
-
 end
