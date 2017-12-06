@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 feature 'user navigates to dragonborn index page' do
-  let!(:dragonborn) { FactoryGirl.create(:dragonborn) }
-  let!(:quest) { FactoryGirl.create_list(:quest, 2, dragonborn: dragonborn) }
+  let!(:dragonborn) { Dragonborn.create(name: 'Jack', race: 'Orc', gender: 'Male') }
+  let!(:quest1) { Quest.create(task: "monkey around", quest_giver: 'ur mom', dragonborn: dragonborn) }
+  let!(:quest2) { Quest.create(task: "zebra around", quest_giver: 'ur dad', dragonborn: dragonborn) }
 
   scenario 'user sees all dragonborn options' do
     visit '/'
