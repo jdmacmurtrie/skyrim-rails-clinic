@@ -12,14 +12,13 @@
 </ol>
 
 <h2>Add a new Quest:</h2>
+
 <%= form_for [@selected_dragonborn, @quest] do |f| %>
-  <fieldset>
-    <%= f.label :quest_giver, 'Given By' %>
-    <%= f.text_field :quest_giver %>
+  <%= f.label :quest_giver, 'Given By' %>
+  <%= f.text_field :quest_giver %>
 
     <%= f.label :task, 'Task' %>
     <%= f.text_field :task %>
 
-    <%= f.submit 'Accept!' %>
-  </fieldset>
+  <%= f.submit "Accept!" %>
 <% end %>

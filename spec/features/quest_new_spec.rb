@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 feature 'user adds a quest' do
-  let!(:dragonborn) { Dragonborn.create(name: 'Rufus', race: 'Breton', gender: 'Male') }
-  let!(:quest1) { Quest.create(task: 'monkey business', quest_giver: 'ur mom', dragonborn: dragonborn) }
-  let!(:quest2) { Quest.create(task: 'donkey business', quest_giver: 'ur dad', dragonborn: dragonborn) }
+  let!(:dragonborn) { Dragonborn.create(name: 'Jack', race: 'Orc', gender: 'Male') }
+  let!(:quest1) { Quest.create(task: "monkey around", quest_giver: 'ur mom', dragonborn: dragonborn) }
+  let!(:quest2) { Quest.create(task: "zebra around", quest_giver: 'ur dad', dragonborn: dragonborn) }
 
   scenario 'user fills out form' do
 
